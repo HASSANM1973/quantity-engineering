@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: quantity-engineering-api
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && python manage.py migrate && python manage.py ensure_admin && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: quantity-engineering-db
+          property: connectionString
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: False
+      - key: DJANGO_ALLOWED_HOSTS
+        value: .onrender.com
+      - key: CORS_ALLOW_ALL_ORIGINS
+        value: False
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://hassanm1973.github.io
+
+databases:
+  - name: quantity-engineering-db
+    databaseName: quantity_engineering
+    plan: free

@@ -59,29 +59,6 @@ The frontend dev server proxies `/api` requests to the backend (default: `http:/
 |-------|----------|
 | `admin@test.com` | `admin123` |
 
-## API Endpoints
-
-All under `/api/`:
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/auth/login/` | Login (email + password) |
-| POST | `/auth/register/` | Register new user |
-| GET | `/auth/me/` | Current user info |
-| POST | `/auth/logout/` | Logout |
-| GET/POST | `/projects/` | List / create projects (user-scoped) |
-| GET/PUT/DELETE | `/projects/{id}/` | Project CRUD |
-| GET/POST | `/sites/` | List / create sites |
-| GET/POST | `/floors/` | List / create floors |
-| GET/POST | `/elements/` | List / create elements |
-| POST | `/elements/calculate/` | Calculate quantities for an element |
-| POST | `/elements/{id}/save_quantities/` | Save calculated quantities |
-| GET/POST | `/material-prices/` | List / create material prices |
-| PUT | `/material-prices/{id}/` | Update material price |
-| POST | `/estimates/generate/` | Auto-generate cost estimate |
-| POST | `/cpm/compute/` | Run CPM calculation |
-| POST | `/cpm/auto_generate/` | Auto-generate activities from elements |
-
 ## Project Structure
 
 ```

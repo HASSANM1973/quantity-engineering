@@ -1,0 +1,11 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+*.pyo
+db.sqlite3
+.env
+backend/server.log
+.DS_Store
+Thumbs.db
+*.egg-info/

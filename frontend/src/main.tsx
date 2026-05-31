@@ -9,7 +9,7 @@ import './style.css'
 
 createRoot(document.getElementById('app')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/quantity-engineering">
       <AuthProvider>
         <I18nProvider>
           <CurrencyProvider>

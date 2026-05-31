@@ -1,7 +1,8 @@
 import axios from 'axios'
 import type { Project, Site, Floor, Element, CalcResult, Activity, CPMResult, MaterialPrice, CostEstimate } from '../types'
 
-const api = axios.create({ baseURL: '/api' })
+const API_BASE = import.meta.env.VITE_API_URL || '/api'
+const api = axios.create({ baseURL: API_BASE })
 
 api.interceptors.request.use((config) => {
   const token = sessionStorage.getItem('auth_token')
